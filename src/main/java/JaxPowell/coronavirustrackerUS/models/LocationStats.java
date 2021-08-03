@@ -1,6 +1,17 @@
 package JaxPowell.coronavirustrackerUS.models;
 
 public class LocationStats {
+    private String place;
+    private int latestTotalCases;
+    private int prevDayDiff;
+
+    public int getPrevDayDiff() {
+        return prevDayDiff;
+    }
+
+    public void setPrevDayDiff(int prevDayDiff) {
+        this.prevDayDiff = prevDayDiff;
+    }
 
     public String getPlace() {
         return place;
@@ -17,9 +28,6 @@ public class LocationStats {
     public void setLatestTotalCases(int latestTotalCases) {
         this.latestTotalCases = latestTotalCases;
     }
-
-    private String place;
-    private int latestTotalCases;
 
     @Override
     public String toString() {

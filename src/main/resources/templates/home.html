@@ -2,8 +2,8 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <title>COVID-19 Tracker US</title>
+<head >
+    <title >COVID-19 Tracker US</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -12,22 +12,44 @@
 </head>
 <body>
 
-<h1>COVID-19 Tracker US</h1>
-<p>Here are the latest cases in the US</p>
+<div class="container">
+    <h1>COVID-19 Tracker US</h1>
+    <div style="width: 70%; display: table-cell;">
+        <h1 class="display-4" th:text="${totalReportedCases}"></h1>
+        <p class="lead">Total cases reported overall</p>
+    </div>
 
-<p th:text="${testName}"></p>
+    <div style="display: table-cell;">
+        <h1 class="display-4" th:text="${totalNewCases}"></h1>
+        <p class="lead">Total cases reported today</p>
+    </div>
+    <hr class="my-4">
+</div>
 
-<table>
-    <tr>
-        <th>Place</th>
-        <th>Total Cases</th>
+<div class="container">
+    <style>
+        table {
+          border-collapse: collapse;
+        }
+        tr {
+          border: solid;
+          border-width: 1px 0;
+        }
+    </style>
+    <table class="table" border=1 frame=void rules=all>
+        <tr bgcolor="#A0C8FC">
+            <th>Place</th>
+            <th>Total Cases</th>
+            <th>Cases Today</th>
 
-    </tr>
-    <tr th:each="locationStat : ${locationStats}">
-        <td th:text="${locationStat.place}"></td>
-        <td th:text="${locationStat.latestTotalCases}"></td>
-    </tr>
-</table>
+        </tr>
+        <tr th:each="locationStat : ${locationStats}">
+            <td th:text="${locationStat.place}"></td>
+            <td th:text="${locationStat.latestTotalCases}"></td>
+            <td th:text="${locationStat.prevDayDiff}"></td>
+        </tr>
+    </table>
+</div>
 
 </body>
 
