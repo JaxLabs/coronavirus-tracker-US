@@ -10,3 +10,5 @@ This project's purpose was to teach me about Java and springboot in a fun displa
 - Maven
 - Springboot
 - Thymeleaf
+
+Based on: https://www.youtube.com/watch?v=8hjNG9GZGnQ
